@@ -4,41 +4,43 @@ using namespace std;
 
 int main() {
     double num1, num2;
-    char op;
+    char operation;
 
-    cout << "Simple Calculator" << endl;
-    cout << "-----------------" << endl;
+    cout << "--- Bireena Info Tech Calculator ---" << endl;
 
+    // Step 1: Input the two numbers
     cout << "Enter first number: ";
     cin >> num1;
-
     cout << "Enter second number: ";
     cin >> num2;
 
-    cout << "Enter operation (+, -, *, /): ";
-    cin >> op;
+    // Step 2: Choose the operation
+    cout << "Choose an operation (+, -, *, /): ";
+    cin >> operation;
 
-    cout << "Result: ";
-    switch (op) {
+    // Step 3: Perform calculation based on choice
+    switch (operation) {
         case '+':
-            cout << num1 + num2;
+            cout << "Result: " << num1 + num2 << endl;
             break;
         case '-':
-            cout << num1 - num2;
+            cout << "Result: " << num1 - num2 << endl;
             break;
         case '*':
-            cout << num1 * num2;
+            cout << "Result: " << num1 * num2 << endl;
             break;
         case '/':
-            if (num2 != 0)
-                cout << num1 / num2;
-            else
-                cout << "Error: Division by zero.";
+            // Check for division by zero
+            if (num2 != 0) {
+                cout << "Result: " << num1 / num2 << endl;
+            } else {
+                cout << "Error: Division by zero is not allowed!" << endl;
+            }
             break;
         default:
-            cout << "Invalid operation.";
+            cout << "Error: Invalid operation selected." << endl;
+            break;
     }
 
-    cout << endl;
     return 0;
 }
